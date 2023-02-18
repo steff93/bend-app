@@ -1,16 +1,12 @@
-export async function getJsonObject(file) {
-  const response = await fetch(file);
-  const result = await response.json();
-
-  return result;
-}
-
 export async function prepareGroups() {
   const groups = await getJsonObject("/assets/things.json");
-  const areaIds = await getAreasIds();
+  const areas = await getAreas();
 
   const sortedGroups = [];
-  areaIds.forEach((id) => sortedGroups.push({ areaId: id, members: [] }));
+
+  areas.forEach((area) =>
+    sortedGroups.push({ areaId: area.areaId, name: area.name, members: [] })
+  );
 
   //create an array with groups made of joined members
   const groupsArray = [];
@@ -44,10 +40,15 @@ export async function prepareGroups() {
   return sortedGroups;
 }
 
-async function getAreasIds() {
-  const ids = [];
-  const areas = await getJsonObject("/assets/areas.json");
-  areas.forEach((area) => ids.push(area.areaId));
+async function getJsonObject(file) {
+  const response = await fetch(file);
+  const result = await response.json();
 
-  return ids;
+  return result;
+}
+
+async function getAreas() {
+  const areas = await getJsonObject("/assets/areas.json");
+
+  return areas;
 }
