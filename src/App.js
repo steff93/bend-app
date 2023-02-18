@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Area from "./components/Area/Area";
-import { getJsonObject } from "./components/dataHelpers";
+import { getJsonObject, prepareGroups } from "./components/dataHelpers";
 import "./App.scss";
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
     });
   }, []);
 
-  console.log({ availableAreas });
+  prepareGroups();
+
   return (
     <div className="bend-app">
       <div className="areas-container">
