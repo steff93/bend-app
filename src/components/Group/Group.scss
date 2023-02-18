@@ -1,0 +1,14 @@
+.group {
+  display: flex;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: #203d74;
+    position: absolute;
+    width: 90%;
+    height: 63%;
+    top: 10%;
+    left: 0;
+  }
+}

@@ -1,0 +1,43 @@
+.member {
+  background-color: #2b4e87;
+  color: #fff;
+
+  width: 90px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+
+  &__sku,
+  &__default-sku {
+    font-weight: 300;
+  }
+
+  &__default-sku {
+    position: absolute;
+    right: 0;
+  }
+
+  &__status {
+    position: absolute;
+    width: 5px;
+    height: 40px;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+
+    &--open {
+      background-color: #f4e700;
+    }
+
+    &--closed {
+      background-color: #f64d25;
+    }
+  }
+}
