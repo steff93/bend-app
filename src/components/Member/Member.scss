@@ -33,6 +33,10 @@
     left: 0;
     border-radius: 0 5px 5px 0;
 
+    &--active {
+      background-color: #ff9800;
+    }
+
     &--open {
       background-color: #f4e700;
     }

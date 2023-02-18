@@ -52,3 +52,7 @@ async function getAreas() {
 
   return areas;
 }
+
+export function checkIfGroupHasActiveMember(group) {
+  return group.some((member) => member.countActive);
+}
