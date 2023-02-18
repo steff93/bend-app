@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Area from "./components/Area/Area";
-import { getAreas } from "./components/dataHelpers";
+import { getJsonObject } from "./components/dataHelpers";
 import "./App.scss";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   const [availableAreas, setAvailableAreas] = useState({});
 
   useEffect(() => {
-    getAreas().then((result) => {
+    getJsonObject("/assets/areas.json").then((result) => {
       setAvailableAreas(result);
       setShowAreas(true);
     });
