@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Area from "./components/Area/Area";
 import { prepareGroups } from "./components/dataHelpers";
 import "./App.scss";

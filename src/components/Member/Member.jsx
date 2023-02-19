@@ -1,3 +1,4 @@
+import React from "react";
 import "./Member.scss";
 
 function Member({ sku, defaultSku, status }) {

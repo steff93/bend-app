@@ -1,3 +1,4 @@
+import React from "react";
 import Member from "../Member/Member";
 import { checkIfGroupHasActiveMember } from "../dataHelpers";
 import "./Group.scss";
