@@ -37,6 +37,18 @@ export async function prepareGroups() {
     });
   });
 
+  //sort single-item groups to be at the end
+  sortedGroups.forEach((group) => {
+    const sortedMembers = group.members.map((member) => {
+      return member;
+    });
+
+    const singleItems = sortedMembers.filter((member) => member.length === 1);
+    const multipleItems = sortedMembers.filter((member) => member.length > 1);
+
+    group.members = [...multipleItems, ...singleItems];
+  });
+
   return sortedGroups;
 }
 
